@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import styled from "styled-components"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -23,13 +24,13 @@ class BlogPostTemplate extends React.Component {
           style={{
             ...scale(-1 / 5),
             display: `block`,
-            marginBottom: rhythm(1),
-            marginTop: rhythm(-1),
+            marginBottom: "1rem",
+            marginTop: "-1.8rem",
           }}
         >
           {post.frontmatter.date}
         </p>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <Body dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr
           style={{
             marginBottom: rhythm(1),
@@ -65,6 +66,13 @@ class BlogPostTemplate extends React.Component {
     )
   }
 }
+
+const Body = styled.div`
+  ul {
+    list-style-type: none;
+    margin-left: 3rem;
+  }
+`
 
 export default BlogPostTemplate
 
